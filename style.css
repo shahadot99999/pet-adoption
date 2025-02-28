@@ -1,0 +1,5 @@
+#droppedImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 8px; /* Space between images */
+  }
