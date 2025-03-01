@@ -80,10 +80,11 @@ const loadPets = () => {
     });
   }
   
-  // Handle Details Button Click
-  function handleDetails(pet) {
+ // Handle Details Button Click
+function handleDetails(pet) {
     const detailsModal = document.getElementById("detailsModal");
     const detailName = document.getElementById("detailName");
+    const detailImage = document.getElementById("detailImage");
     const detailCategory = document.getElementById("detailCategory");
     const detailBirth = document.getElementById("detailBirth");
     const detailDescription = document.getElementById("detailDescription");
@@ -91,9 +92,10 @@ const loadPets = () => {
   
     // Set pet details in the modal
     detailName.textContent = pet.pet_name;
+    detailImage.src = pet.image; // Set the image source
     detailCategory.textContent = pet.category;
     detailBirth.textContent = pet.date_of_birth;
-    detailDescription.textContent = pet.description || "No description available.";
+    detailDescription.textContent = pet.pet_details || "No description available.";
   
     // Show the modal
     detailsModal.classList.remove("hidden");
@@ -103,6 +105,5 @@ const loadPets = () => {
       detailsModal.classList.add("hidden");
     });
   }
-  
   // Fetch and display pets when the page loads
   loadPets();
