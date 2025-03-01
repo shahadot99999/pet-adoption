@@ -44,51 +44,84 @@
 
     <!-- Fetch all the pets -->
 
-    <!-- <div class="container mx-auto p-4">
-      <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Available Pets for Adoption</h1>
-      <div class="grid grid-cols-5 gap-1"> 
-        
-     
-        <div id="petContainer" class="col-span-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-         
-        </div>
-        
-        
-        <div class="col-span-1">
-         
-        </div>
     
-      </div>
-    </div>
-   -->
 
-   <div class="container mx-auto p-4">
+   <!-- <div class="container mx-auto p-4">
     <div class="flex justify-between items-center text-xl font-bold py-1">
     <h2>Best deal for of you</h2>
     <button class="bg-indigo-500 text-white hover:bg-fuchsia-500">Sort by Price</button>
-    </div>
-    <!-- <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Available Pets for Adoption</h1> -->
-    <div class="grid grid-cols-5 gap-1"> <!-- 5 columns to represent 100% width -->
+    </div> -->
+   
+    <!-- <div class="grid grid-cols-5 gap-1"> 5 columns to represent 100% width -->
       
+      <!-- First column (80% width) -->
+      <!-- <div id="petContainer" class="col-span-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"> -->
+        <!-- Pet cards will be dynamically inserted here -->
+      <!-- </div> -->
+      
+      <!-- Second column (20% width) -->
+      <!-- <div id="sidebar" class="col-span-1 bg-gray-100 p-4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2 class="text-xl font-bold mb-4">Dropped Images</h2>
+        <div id="droppedImages"> -->
+          <!-- Dropped images will appear here -->
+        <!-- </div>
+      </div>
+    
+    </div>
+  </div> -->
+
+  <div class="container mx-auto p-4">
+    <div class="flex justify-between items-center text-xl font-bold py-1">
+      <h2>Best deal for you</h2>
+      <button class="bg-indigo-500 text-white hover:bg-fuchsia-500">Sort by Price</button>
+    </div>
+    <div class="grid grid-cols-5 gap-1">
       <!-- First column (80% width) -->
       <div id="petContainer" class="col-span-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <!-- Pet cards will be dynamically inserted here -->
       </div>
-      
+  
       <!-- Second column (20% width) -->
-      <div id="sidebar" class="col-span-1 bg-gray-100 p-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h2 class="text-xl font-bold mb-4">Dropped Images</h2>
+      <div id="sidebar" class="col-span-1 bg-gray-100 p-4">
+        <h2 class="text-xl font-bold mb-4">Liked Pets</h2>
         <div id="droppedImages">
-          <!-- Dropped images will appear here -->
+          <!-- Liked images will appear here -->
         </div>
       </div>
-    
+    </div>
+  </div>
+  
+  <!-- Modal for Adopt Confirmation -->
+  <div id="adoptModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+    <div class="bg-white p-6 rounded-lg">
+      <h2 class="text-xl font-bold mb-4">Adopt Confirmation</h2>
+      <p>Are you sure you want to adopt this pet?</p>
+      <div class="mt-4 flex justify-end">
+        <button id="confirmAdopt" class="bg-green-500 text-white px-4 py-2 rounded">Yes</button>
+        <button id="cancelAdopt" class="bg-red-500 text-white px-4 py-2 rounded ml-2">No</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Pet Details -->
+  <div id="detailsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+    <div class="bg-white p-6 rounded-lg">
+      <h2 class="text-xl font-bold mb-4">Pet Details</h2>
+      <p><strong>Name:</strong> <span id="detailName"></span></p>
+      <p><strong>Category:</strong> <span id="detailCategory"></span></p>
+      <p><strong>Birth:</strong> <span id="detailBirth"></span></p>
+      <p><strong>Description:</strong> <span id="detailDescription"></span></p>
+      <div class="mt-4 flex justify-end">
+        <button id="closeDetails" class="bg-blue-500 text-white px-4 py-2 rounded">Close</button>
+      </div>
     </div>
   </div>
 
 
     <!-- <script src="js/pets.js"></script> -->
 
-    <script src="js/petsLover.js"></script>
+    <!-- <script src="js/petsLover.js"></script> -->
+
+    <script src="js/petsLoveragain.js"></script>
 </body>
 </html>
