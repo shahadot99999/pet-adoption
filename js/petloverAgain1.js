@@ -33,6 +33,25 @@ function filterPetsByCategory(category) {
       .then((res) => res.json())
       .then((data) => {
         const filteredPets = data.pets.filter((pet) => pet.category === category);
+        
+        // Check if there are no pets in the filtered category
+        if(filteredPets.length == 0){
+          petContainer.classList.remove("grid");
+          petContainer.innerHTML = `
+          <div class="min-h-[600px] flex flex-col gap-5 justify-center items-center">
+            <img src="img/error.webp" />
+            <h2 class="text-center text-xl font-bold">
+            No Information Available
+            </h2>
+          </div>
+          `;
+          return;
+      }else{
+        petContainer.classList.add("grid");
+        
+      }
+
+
         displayPets(filteredPets);
       })
       .catch((error) => console.log(error));
