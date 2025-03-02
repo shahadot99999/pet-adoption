@@ -5,6 +5,27 @@ const loadPets = () => {
       .catch((error) => console.log(error));
   };
   
+  // Function to filter pets by category
+  function filterPetsByCategory(category) {
+    const petContainer = document.getElementById("petContainer");
+  
+    // Add a "spring" effect (2-second delay)
+    petContainer.classList.add("opacity-0", "transition-opacity", "duration-2000");
+    setTimeout(() => {
+      petContainer.classList.remove("opacity-0");
+  
+      // Fetch pets and filter by category
+      fetch("https://openapi.programming-hero.com/api/peddy/pets")
+        .then((res) => res.json())
+        .then((data)=>console.log(data))
+        // .then((data) => {
+        //   const filteredPets = data.pets.filter((pet) => pet.category === category);
+        //   displayPets(filteredPets);
+        // })
+        .catch((error) => console.log(error));
+    }, 2000); // 2-second delay
+  }
+
   // Function to display pets on the webpage
   function displayPets(pets) {
     const petContainer = document.getElementById("petContainer");
@@ -45,6 +66,9 @@ const loadPets = () => {
       petContainer.appendChild(petCard);
     });
   }
+
+
+
   
   // Handle Like Button Click
   function handleLike(imageSrc) {
@@ -120,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
           if (data.status) { // Ensure the response is successful
-              console.log(data.categories); // Logs the full array
+             // console.log(data.categories); // Logs the full array
 
               // Clear any existing content
               categoriesContainer.innerHTML = "";
