@@ -3,3 +3,13 @@
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     gap: 8px; /* Space between images */
   }
+
+  #sidebar {
+    order: 2; /* Ensure sidebar appears below pet cards on mobile */
+  }
+  
+  @media (min-width: 768px) {
+    #sidebar {
+      order: 1; /* Reset order for desktop */
+    }
+  }

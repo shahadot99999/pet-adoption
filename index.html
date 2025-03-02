@@ -42,6 +42,21 @@
       </div>
     </header>
 
+
+    <!-- Category the item -->
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-3xl font-bold text-center mb-8">Pet Categories</h1>
+
+     
+      <!-- API Categories -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Categories from API</h2>
+          <!-- <div id="api-categories" class="space-y-2 flex flex-row justify-between items-center ">
+              <-- Categories will be loaded here -->
+          <!-- </div> -->
+      </div>
+  </div>
+
     <!-- Fetch all the pets -->
 
     
@@ -71,18 +86,23 @@
   </div> -->
 
   <div class="container mx-auto p-4">
+ 
+    <div id="api-categories" class="space-y-2 flex flex-row justify-between items-center ">
+      <!-- Categories will be loaded here -->
+     </div>
+     
     <div class="flex justify-between items-center text-xl font-bold py-1">
       <h2>Best deal for you</h2>
       <button class="bg-indigo-500 text-white hover:bg-fuchsia-500">Sort by Price</button>
     </div>
-    <div class="grid grid-cols-5 gap-1">
-      <!-- First column (80% width) -->
-      <div id="petContainer" class="col-span-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <!-- First column (80% width on desktop, full width on mobile) -->
+      <div id="petContainer" class="md:col-span-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <!-- Pet cards will be dynamically inserted here -->
       </div>
   
-      <!-- Second column (20% width) -->
-      <div id="sidebar" class="col-span-1 bg-gray-100 p-4">
+      <!-- Second column (20% width on desktop, full width on mobile) -->
+      <div id="sidebar" class="md:col-span-1 bg-gray-100 p-4">
         <h2 class="text-xl font-bold mb-4">Liked Pets</h2>
         <div id="droppedImages">
           <!-- Liked images will appear here -->

@@ -106,4 +106,93 @@ function handleDetails(pet) {
     });
   }
   // Fetch and display pets when the page loads
+
+
+ 
+
+//   {
+//     "status": true,
+//     "message": "successfully fetched all the categories data",
+//     "categories": [
+//         {
+//             "id": 1,
+//             "category": "Cat",
+//             "category_icon": "https://i.ibb.co.com/N7dM2K1/cat.png"
+//         },
+//         {
+//             "id": 2,
+//             "category": "Dog",
+//             "category_icon": "https://i.ibb.co.com/c8Yp1y7/dog.png"
+//         },
+//         {
+//             "id": 3,
+//             "category": "Rabbit",
+//             "category_icon": "https://i.ibb.co.com/3hftmLC/rabbit.png"
+//         },
+//         {
+//             "id": 4,
+//             "category": "Bird",
+//             "category_icon": "https://i.ibb.co.com/6HHZwfq/bird.png"
+//         }
+//     ]
+// }
+
+document.addEventListener("DOMContentLoaded", function () { 
+  const apiUrl = "https://openapi.programming-hero.com/api/peddy/categories";
+  const categoriesContainer = document.getElementById("api-categories");
+
+  // Fetch categories from the API
+  fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.status) { // Ensure the response is successful
+              console.log(data.categories); // Logs the full array
+
+              // Clear any existing content
+              categoriesContainer.innerHTML = "";
+
+              // Loop through each category and create an anchor element
+              data.categories.forEach(category => {
+                  const categoryItem = document.createElement("a");
+                  categoryItem.href = "#"; // You can update the URL accordingly
+                  categoryItem.textContent = category.category;
+                  categoryItem.classList.add("block", "text-blue-500", "flex","flex-col", "text-lg");
+
+                  // Append to the container
+                  categoriesContainer.appendChild(categoryItem);
+              });
+          } else {
+              console.log("Failed to fetch categories");
+          }
+      })
+      .catch((error) => console.log("Error fetching data:", error));
+});
+
+          
+          // {
+          //   if (Array.isArray(data.data) && data.data.length > 0) {
+          //       // Clear any loading or placeholder content
+          //       categoriesContainer.innerHTML = "";
+
+          //       // Add each category as a link
+          //       data.data.forEach((category) => {
+          //           const categoryLink = document.createElement("a");
+          //           categoryLink.href = "#";
+          //           categoryLink.textContent = category;
+          //           categoryLink.className = "block text-blue-500 hover:underline";
+          //           categoriesContainer.appendChild(categoryLink);
+          //       });
+          //   } else {
+          //       // Display a message if no categories are found
+          //       categoriesContainer.innerHTML = "<p class='text-gray-500'>No categories found.</p>";
+          //   }
+//         })
+//         .catch((error) => {
+//             console.error("Error fetching categories:", error);
+//             categoriesContainer.innerHTML = "<p class='text-red-500'>Failed to load categories. Please try again later.</p>";
+//         });
+// });
+
+
+
   loadPets();
