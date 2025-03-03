@@ -1,3 +1,11 @@
+// const loadPets = () => {
+//   fetch("https://openapi.programming-hero.com/api/peddy/pets")
+//     .then((res) => res.json())
+//     .then((data) => displayPets(data.pets))
+//     .catch((error) => console.log(error));
+// };
+
+
 // Fetch and load pets
 const loadPets = () => {
   fetch("https://openapi.programming-hero.com/api/peddy/pets")
@@ -225,6 +233,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.log("Error fetching data:", error));
 
-  // Load all pets initially
-  loadPets();
+  // // Load all pets initially
+  // loadPets();
 });
+
+// Load all pets initially
+loadPets();
