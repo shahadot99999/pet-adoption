@@ -1,7 +1,12 @@
+// Fetch and load pets
 const loadPets = () => {
   fetch("https://openapi.programming-hero.com/api/peddy/pets")
     .then((res) => res.json())
-    .then((data) => displayPets(data.pets))
+    .then((data) => {
+      // Store the pets data globally for sorting
+      window.petsData = data.pets;
+      displayPets(window.petsData); // Display pets initially
+    })
     .catch((error) => console.log(error));
 };
 
@@ -98,6 +103,19 @@ function displayPets(pets) {
     petContainer.appendChild(petCard);
   });
 }
+
+
+// Function to sort pets by price in descending order
+function sortPetsByPriceDescending() {
+  if (window.petsData) {
+    // Sort the pets by price in descending order
+    const sortedPets = window.petsData.sort((a, b) => b.price - a.price);
+    displayPets(sortedPets); // Re-render the sorted pets
+  }
+}
+
+// Add event listener to the "Sort by Price" button
+document.querySelector("button").addEventListener("click", sortPetsByPriceDescending);
 
 // Handle Like Button Click
 function handleLike(imageSrc) {
