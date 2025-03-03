@@ -17,16 +17,16 @@
 </head>
 <body>
     
-    <!-- nav bar -->
+     <!-- Navbar -->
      <header>
       <div class="navbar mx-auto container py-2 bg-base-100">
         <!-- Left Section: Logo and Brand Name -->
         <div class="navbar-start">
-          <a class="btn btn-ghost">pet lover</a>
+          <a class="btn btn-ghost">Pet Lover</a>
           <img class="btn btn-ghost" src="img/logo.webp" alt="Pet Lover Logo" />
         </div>
-    
-        <!-- Middle Section: Navigation Links (Visible on all devices) -->
+
+        <!-- Middle Section: Navigation Links -->
         <div class="navbar-center flex">
           <ul class="menu menu-horizontal px-1">
             <li><a>Home</a></li>
@@ -34,20 +34,49 @@
             <li><a>Contact</a></li>
           </ul>
         </div>
-    
+
         <!-- Right Section: User Icon -->
         <div class="navbar-end">
-          <a class="btn"><i class="fa-solid fa-user"></i></a>
+          <a id="userIcon" class="btn"><i class="fa-solid fa-user"></i></a>
         </div>
       </div>
     </header>
 
+    <!-- Your Path to Adoption -->
+    <div class="min-h-screen flex flex-col items-center justify-center text-center bg-gray-100 p-4">
+      <!-- h4 Heading -->
+      <h4 class="text-lg text-gray-600 mb-2">Bringing Families Together</h4>
 
-    <!-- Category the item -->
+      <!-- h1 Heading -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Path to Adoption Starts Here</h1>
+
+      <!-- Paragraph -->
+      <p class="text-gray-700 max-w-2xl mb-6">
+        Open your heart and home to a furry friend in need. Our adoption process is simple, caring, and designed to match you with your perfect companion. Start your journey today!
+      </p>
+
+      <!-- View More Button -->
+      <a
+        onclick="scrollToUserIcon()"
+        class="btn bg-green-500 text-white hover:bg-green-600 transition-colors mb-8 cursor-pointer"
+      >
+        View More
+      </a>
+
+      <!-- Big Image -->
+      <img
+        src="img/adoptPic.jpg"
+        alt="Adopt a Pet"
+        class="w-full max-w-4xl rounded-lg shadow-lg"
+      />
+    </div>
+
+
+    <!-- Adopt Your Best Friend -->
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Adopt Your Best Friend</h2>
       <p>Saving one dog will not change the world, but surely for that one dog, the world will change forever. Adopting one dog won't change the world, but it will change the world for that one dog.</p>
-  </div>
+    </div>
 
     <!-- Fetch all the pets -->
 
@@ -67,7 +96,7 @@
       
     <div class="flex justify-between items-center text-xl font-bold py-6">
       <h2>Best deal for you</h2>
-      <button class="bg-indigo-500 text-white hover:bg-fuchsia-500">Sort by Price</button>
+      <button class="bg-green-500 rounded text-white hover:bg-green-600 transition-colors">Sort by Price</button>
     </div>
 
     <!-- all category are visible.. -->

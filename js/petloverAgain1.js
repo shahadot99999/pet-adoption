@@ -6,6 +6,15 @@
 // };
 
 
+// Smooth Scroll Script 
+function scrollToUserIcon() {
+  const userIcon = document.getElementById("userIcon");
+  if (userIcon) {
+    userIcon.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+
 // Fetch and load pets
 const loadPets = () => {
   fetch("https://openapi.programming-hero.com/api/peddy/pets")
