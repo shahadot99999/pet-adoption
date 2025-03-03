@@ -148,7 +148,6 @@ function handleLike(imageSrc) {
 }
 
 
-
 // Handle Adopt Button Click
 function handleAdopt(pet) {
   const adoptModal = document.getElementById("adoptModal");
@@ -189,7 +188,8 @@ function handleAdopt(pet) {
   }, 1000); // 1-second interval for countdown
 }
 
- 
+  
+
 
 
 // Handle Details Button Click
