@@ -147,26 +147,50 @@ function handleLike(imageSrc) {
   droppedImages.appendChild(img);
 }
 
+
+
 // Handle Adopt Button Click
 function handleAdopt(pet) {
   const adoptModal = document.getElementById("adoptModal");
   const confirmAdopt = document.getElementById("confirmAdopt");
-  const cancelAdopt = document.getElementById("cancelAdopt");
 
   // Show the modal
   adoptModal.classList.remove("hidden");
 
-  // Confirm adoption
-  confirmAdopt.addEventListener("click", () => {
-    alert(`You have adopted ${pet.pet_name}!`);
-    adoptModal.classList.add("hidden");
+  // Store the adopt button that triggered the modal
+  let adoptButton = null;
+
+  // Find the adopt button in the pet card that triggered the modal
+  const petCards = document.querySelectorAll(".card");
+  petCards.forEach(card => {
+    if (card.querySelector(".card-title").textContent === pet.pet_name) {
+      adoptButton = card.querySelector(".adopt-btn");
+    }
   });
 
-  // Cancel adoption
-  cancelAdopt.addEventListener("click", () => {
-    adoptModal.classList.add("hidden");
-  });
+  // Start countdown
+  let countdown = 3;
+  const countdownInterval = setInterval(() => {
+    if (countdown > 0) {
+      confirmAdopt.textContent = ` ${countdown}`;
+      countdown--;
+    } else {
+      clearInterval(countdownInterval);
+      confirmAdopt.textContent = "Adopted";
+      adoptModal.classList.add("hidden"); // Hide the modal after countdown
+
+      // Disable the adopt button in the pet card
+      if (adoptButton) {
+        adoptButton.textContent = "Adopted";
+        adoptButton.disabled = true;
+        adoptButton.classList.add("opacity-50", "cursor-not-allowed");
+      }
+    }
+  }, 1000); // 1-second interval for countdown
 }
+
+ 
+
 
 // Handle Details Button Click
 function handleDetails(pet) {
